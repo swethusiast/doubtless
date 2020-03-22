@@ -1,0 +1,80 @@
+<div class="signup">
+
+  <div class="container">
+    <ng-container *ngIf="signup">
+      <h1>{{'SIGNUP.PRICES' | translate}}</h1>
+      <div class="form-card no-after py-5 px-4">
+        <h2>{{prices.title}}</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <p>{{prices.description}}</p>
+          </div>
+          <div class="col-md-6">
+            <ul *ngFor="let item of prices.list">
+              <li>{{item}}</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="signup">
+      <h1 class="no-before">{{'NAV.SIGNUP' | translate}}</h1>
+    </ng-container>
+    <ng-container *ngIf="editProfile">
+      <h1 class="no-before">{{'SIGNUP.EDIT-PROFILE' | translate}}</h1>
+    </ng-container>
+    <div class="form-card py-5 px-4">
+      <form #signupForm="ngForm" (submit)="onSignup(signupForm)">
+        <div class="row">
+          <div class="col-md-4">
+            <label for="username">{{'SIGNUP.NAME' | translate}}</label>
+            <input class="form-control" required ngModel #username="ngModel" type="text" name="username">
+            <span class="text-red m-0" *ngIf="username.touched && username.invalid">Please enter a valid
+              Username.</span>
+          </div>
+          <div class="col-md-4">
+            <label for="exampleInputEmail1">{{'SIGNUP.EMAIL' | translate}}</label>
+            <input class="form-control" ngModel #emailInput="ngModel" name="email" required email type="email">
+            <span class="text-red m-0" *ngIf="emailInput.touched && emailInput.invalid">Please enter a valid
+              Email.</span>
+          </div>
+          <div class="col-md-4">
+            <label for="phone">{{'SIGNUP.PHONE' | translate}}</label>
+            <input class="form-control" ngModel #phone="ngModel" name="phone" required type="text">
+            <span class="text-red m-0" *ngIf="phone.touched && phone.invalid">Please enter a valid Phone number.</span>
+          </div>
+          <div class="col-md-4">
+            <label for="password">{{'SIGNUP.PASSWORD' | translate}}</label>
+            <input class="form-control" ngModel #password="ngModel" name="password" required type="password">
+            <span class="text-red m-0" *ngIf="password.touched && password.invalid">Please enter a valid
+              Password.</span>
+          </div>
+          <div class="col-md-4">
+            <label for="confirmPassword">{{'SIGNUP.CONFIRM-PASSWORD' | translate}}</label>
+            <input class="form-control" ngModel #confirmPassword="ngModel" name="confirmPassword" required
+              type="password">
+            <span class="text-red m-0" *ngIf="confirmPassword.touched && confirmPassword.invalid">Please enter a
+              password that match!</span>
+          </div>
+          <div class="col-md-4 d-flex align-items-center">
+            <div class="form-group form-check m-0">
+              <input type="checkbox" class="form-check-input mt-3" ngModel #acceptTerms="ngModel" name="acceptTerms"
+                id="acceptTerms">
+              <label class="form-check-label mt-1" for="acceptTerms">{{'SIGNUP.ACCEPT-TERMS' | translate}}</label>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <ng-container *ngIf="signup">
+            <button class="btn btn-success" type="submit">{{'SIGNUP.REGISTER' | translate}}</button>
+          </ng-container>
+          <ng-container *ngIf="editProfile">
+            <button class="btn btn-success" type="submit">{{'SIGNUP.SAVE' | translate}}</button>
+          </ng-container>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

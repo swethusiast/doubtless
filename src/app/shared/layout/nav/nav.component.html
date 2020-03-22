@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg sticky-top ">
+  <div class="container">
+
+    <a class="navbar-brand" routerLink="/home">
+      <span>
+        <img src="./../../../../assets/doubtless.svg" alt="Doubtless Logo">
+      </span>
+    </a>
+    <button class="navbar-toggler" (click)="isMenuCollapsed = !isMenuCollapsed" type="button">
+      <i class="la la-bars"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" [ngbCollapse]="isMenuCollapsed">
+      <ul class="navbar-nav ml-auto">
+
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['home']" routerLinkActive="active"
+            [ngClass]="{'remove-active': (activeRoute === 'how-it-works' || activeRoute === 'faqs' )}">{{'NAV.HOME' | translate}}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['home']" [fragment]="'how-it-works'"
+            [ngClass]="{'active': activeRoute === 'how-it-works'}">{{'NAV.HOW-IT-WORKS' | translate}}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['home']" [fragment]="'faqs'"
+            [ngClass]="{'active': activeRoute === 'faqs', 'remove-active': activeRoute !== 'faqs'}">{{'NAV.FAQS' | translate}}</a>
+        </li>
+        <li class="nav-item" *ngIf="userIsAuthenticated">
+          <a class="nav-link" routerLink="user/generate" routerLinkActive="active">{{'NAV.REPORTS' | translate}}</a>
+        </li>
+        <li class="nav-item" *ngIf="userIsAuthenticated">
+          <a class="nav-link" routerLink="user/profile" routerLinkActive="active">{{'NAV.PROFILE' | translate}}</a>
+        </li>
+        <li class="nav-item" *ngIf="!userIsAuthenticated">
+          <a class="nav-link" routerLink="auth/signup" routerLinkActive="active">{{'NAV.SIGNUP' | translate}}</a>
+        </li>
+        <li class="nav-item dropdown d-flex align-items-center" ngbDropdown display="dynamic"
+          *ngIf="!userIsAuthenticated">
+          <button class="btn btn-success" id="dropdownBasic1" ngbDropdownToggle>{{'NAV.LOGIN' | translate}}</button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <app-login></app-login>
+          </div>
+        </li>
+        <li class="nav-item" *ngIf="userIsAuthenticated">
+          <button class="btn btn-link  " (click)="logout()">
+            <img class="img-fluid" src="./../../../../assets/logout.svg" alt="logout">
+          </button>
+        </li>
+        <ng-container *ngIf="lang === 'en'">
+          <button class="btn btn-link text-dark" (click)="switchLanguage('ar')">ع</button>
+        </ng-container>
+        <ng-container *ngIf="lang === 'ar'">
+          <button class="btn btn-link text-dark" (click)="switchLanguage('en')">EN</button>
+        </ng-container>
+
+
+      </ul>
+
+    </div>
+  </div>
+
+</nav>

@@ -1,0 +1,217 @@
+<section class="header">
+  <div class="container h-100">
+    <div class="row  h-100">
+      <div class="description align-self-center col-md-6">
+        <h1 class="no-before">
+          {{homeData.header.title}}
+        </h1>
+        <p> {{homeData.header.description}}
+        </p>
+      </div>
+      <div class="overview d-flex col-md-6">
+        <img class="img-fluid align-self-center " [src]='homeData.header.image' alt="overview">
+      </div>
+
+    </div>
+    <a routerLink="/home" (click)="onClick('how-it-works')"><img src="./../../../../assets/Next.svg" alt="Next"></a>
+
+  </div>
+</section>
+
+<section class="how-it-works" id='how-it-works'>
+
+  <div class="container">
+    <h1> {{homeData.howItWorks.title}}
+    </h1>
+    <div class="row">
+      <div class="col-md-6 p-0 my-3" *ngFor="let section of homeData.howItWorks.sections; let i = index;">
+        <div class="form-card p-4" [ngClass]="{'no-after' : i < homeData.howItWorks.sections.length - 1 }">
+          <h2 class=" my-4">{{section.title}}</h2>
+          <p>{{section.description}}</p>
+          <ul *ngFor="let item of section.list">
+            <li>{{item}}</li>
+          </ul>
+          <p>{{section.extraDescription}}</p>
+
+        </div>
+
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-12 p-0">
+        <div class="form-card w-100 no-after p-4">
+          <h2 class=" my-4">{{homeData.howItWorks.ideation.title}}</h2>
+          <p>{{homeData.howItWorks.ideation.description}}</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<section class="about" id='about'>
+
+  <div class="container">
+    <h1>{{homeData.about.title}}</h1>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <p class="mt-5 text-lowercase">{{homeData.about.description}}</p>
+        <img [src]="homeData.about.image" alt="about image">
+
+      </div>
+    </div>
+  </div>
+  <div class="container" *ngIf="homeData.about.sections">
+    <div class="row">
+
+      <ngb-carousel #carousel interval="1000" [showNavigationArrows]="false" [showNavigationIndicators]="false">
+        <ng-template ngbSlide *ngFor="let section of homeData.about.sections">
+          <div class="form-card text-left no-after">
+            <div class="row">
+              <div class="col-md-2">
+                <div class="d-flex justify-content-center about-section-icon">
+                  <img [src]="section.icon" alt="section icon">
+
+                </div>
+              </div>
+              <div class="col-md-10">
+                <h2 class="mb-4">{{section.title}}</h2>
+                <p class="pr-3" [innerHtml]="section.description"></p>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section class="faqs" id='faqs'>
+
+  <div class="container">
+    <h1>{{homeData.faqs.title}}</h1>
+    <div class="row">
+      <div class="col-md-12 form-card py-4 px-4">
+        <div class="my-3" *ngFor="let faq of homeData.faqs.questions;let i = index;">
+          <ngb-accordion #a="ngbAccordion" activeIds="custom-panel-0">
+            <ngb-panel id="custom-panel-{{i}}">
+              <ng-template ngbPanelHeader let-opened="opened">
+                <button ngbPanelToggle [ngClass]="{'closed': !opened}"
+                  class="d-flex align-items-center justify-content-between p-3 w-100">
+                  <h5 [ngClass]="{'text-success' : opened}" class="m-0">{{faq.question}}</h5>
+                  <img *ngIf="opened" src="./../../../../assets/up.svg" alt="up cursor">
+                  <img *ngIf="!opened" src="./../../../../assets/down.svg" alt="down cursor">
+                </button>
+              </ng-template>
+              <ng-template ngbPanelContent>
+                <p>{{faq.answer}}</p>
+              </ng-template>
+            </ngb-panel>
+          </ngb-accordion>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="timeline-container">
+  <div class="container">
+    <h1 class="">Doubtless Calculator Process</h1>
+    <!--first section-->
+    <div class="row align-items-center doubtless-process">
+      <div class="col-2 text-center bottom after">
+        <div class="circle">1</div>
+      </div>
+      <div class="col-6">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi orci urna,
+          iaculis in ligula et, posuere interdum lectus.</p>
+      </div>
+    </div>
+    <!--path between 1-2-->
+    <div class="row timeline">
+      <div class="col-2">
+        <div class="corner top-right"></div>
+      </div>
+      <div class="col-8">
+        <hr />
+      </div>
+      <div class="col-2">
+        <div class="corner left-bottom"></div>
+      </div>
+    </div>
+    <!--second section-->
+    <div class="row align-items-center justify-content-end doubtless-process">
+      <div class="col-6 text-right">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi orci urna,
+          iaculis in ligula et, posuere interdum lectus.</p>
+      </div>
+      <div class="col-2 text-center full after">
+        <div class="circle">2</div>
+      </div>
+    </div>
+    <!--path between 2-3-->
+    <div class="row timeline">
+      <div class="col-2">
+        <div class="corner right-bottom"></div>
+      </div>
+      <div class="col-8">
+        <hr />
+      </div>
+      <div class="col-2">
+        <div class="corner top-left"></div>
+      </div>
+    </div>
+    <!--third section-->
+    <div class="row align-items-center doubtless-process">
+      <div class="col-2 text-center full before">
+        <div class="circle">3</div>
+      </div>
+      <div class="col-6">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi orci urna,
+          iaculis in ligula et, posuere interdum lectus.</p>
+      </div>
+    </div>
+
+    <!--path between 3-4 -->
+    <div class="row timeline">
+      <div class="col-2">
+        <div class="corner top-right"></div>
+      </div>
+      <div class="col-8">
+        <hr />
+      </div>
+      <div class="col-2">
+        <div class="corner left-bottom"></div>
+      </div>
+    </div>
+    <!--4 section-->
+    <div class="row align-items-center justify-content-end doubtless-process">
+      <div class="col-6 text-right">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi orci urna,
+          iaculis in ligula et, posuere interdum lectus.</p>
+      </div>
+      <div class="col-2 text-center top before">
+        <div class="circle">4</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="partners" id='partners'>
+
+  <div class="container">
+    <h1>{{homeData.partners.title}}</h1>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="images d-flex flex-wrap justify-content-center">
+          <img *ngFor="let img of homeData.partners.images" class="img-fluid p-2 Responsive " [src]="img"
+            alt="partner logo">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

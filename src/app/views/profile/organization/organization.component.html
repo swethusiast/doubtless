@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>{{'USER.EX-SUMMARY' | translate}}</h1>
+  <div class="row executive-summary">
+    <ng-container *ngFor="let item of ExecutiveSummary">
+      <div class="col-md-3 mt-4">
+        <div class="form-card no-after p-3">
+          <h5 class="mb-4">{{item.title}}</h5>
+          <h4 class="m-0 text-right amount">{{item.amount}}</h4>
+        </div>
+      </div>
+    </ng-container>
+
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-6 mt-4">
+      <div class="form-card no-after">
+        <div id="chart1Container" style="height: 370px; width: 100%;"></div>
+      </div>
+    </div>
+    <div class="col-md-6 mt-4">
+      <div class="form-card no-after">
+        <div id="chart2Container" style="height: 370px; width: 100%;"></div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

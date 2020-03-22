@@ -1,0 +1,86 @@
+<section class="container edit-organization">
+  <ng-container *ngIf="addOrganization">
+    <h1>{{'USER.ADD-ORGANIZATION' | translate}}</h1>
+  </ng-container>
+  <ng-container *ngIf="editOrganization">
+    <h1>{{'USER.EDIT-ORGANIZATION' | translate}}</h1>
+  </ng-container>
+  <div class="form-card py-5 px-4">
+    <div class="uploadfilecontainer text-center" (click)="fileInput.click()">
+      <label class="cursor-pointer p-4">
+        <i class="la la-plus"></i>
+        <p class="m-0">{{'USER.UPLOAD-LOGO' | translate}}</p>
+      </label>
+      <input hidden type="file" #fileInput (change)="uploadFile($event.target.files)">
+    </div>
+    <div class="files-list" *ngFor="let file of files;let i=index">
+      <p>{{ file }}</p>
+      <button class="delete-file" (click)="deleteAttachment(i)">
+        <img src="../../assets/Recycle_Bin_Full.png">
+      </button>
+    </div>
+    <form #organizationForm="ngForm" (submit)="onSubmit(organizationForm)">
+      <div class="row">
+        <div class="col-md-4">
+          <label for="name">{{'USER.NAME' | translate}}</label>
+          <input class="form-control" required ngModel #name="ngModel" type="text" id="name" name="name">
+          <span class="text-red m-0" *ngIf="name.touched && name.invalid">Please enter a valid
+            Username.</span>
+        </div>
+        <div class="col-md-4">
+          <label for="currency">{{'USER.CURRENCY' | translate}}</label>
+          <select class="form-control" required ngModel #currency="ngModel" name="currency" id="currency">
+            <option>USD</option>
+            <option>EGP</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="website">{{'USER.WEBSITE' | translate}}</label>
+          <input class="form-control" ngModel #website="ngModel" name="website" id="website" required type="text">
+          <span class="text-red m-0" *ngIf="website.touched && website.invalid">Please enter a valid
+            URL.</span>
+        </div>
+        <div class="col-md-4">
+          <label for="crNo">{{'USER.COMMERCIAL-NO' | translate}}</label>
+          <input class="form-control" ngModel #crNo="ngModel" name="crNo" id="crNo" required type="number">
+          <span class="text-red m-0" *ngIf="crNo.touched && crNo.invalid">Please enter a valid
+            Commercial registration no.</span>
+        </div>
+        <div class="col-md-4">
+          <label for="trNo">{{'USER.TAX-NO' | translate}}</label>
+          <input class="form-control" ngModel #trNo="ngModel" name="trNo" id="trNo" required type="number">
+          <span class="text-red m-0" *ngIf="trNo.touched && trNo.invalid">Please enter a valid
+            Tax registration no.</span>
+        </div>
+        <div class="col-md-4">
+          <label for="vatNo">{{'USER.VAT-NO' | translate}}</label>
+          <input class="form-control" ngModel #vatNo="ngModel" name="vatNo" id="vatNo" required type="number">
+          <span class="text-red m-0" *ngIf="vatNo.touched && vatNo.invalid">Please enter a valid
+            VAT number.</span>
+        </div>
+        <div class="col-md-4">
+          <label for="address">{{'USER.ADDRESS' | translate}}</label>
+          <input class="form-control" ngModel #address="ngModel" name="address" id="address" required type="text">
+          <span class="text-red m-0" *ngIf="address.touched && address.invalid">Please enter a valid
+            address.</span>
+        </div>
+        <div class="col-md-4">
+          <label for="industry">{{'USER.INDUSTRY' | translate}}</label>
+          <select class="form-control" required ngModel #industry="ngModel" name="industry" id="industry">
+            <option>industry name</option>
+            <option>industry name</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="poBox">{{'USER.POBOX' | translate}}</label>
+          <input class="form-control" ngModel #poBox="ngModel" name="poBox" id="poBox" required type="text">
+          <span class="text-red m-0" *ngIf="poBox.touched && poBox.invalid">Please enter a valid
+            PO Box.</span>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <button class="btn btn-success" type="submit">{{'USER.SAVE' | translate}}</button>
+      </div>
+    </form>
+  </div>
+</section>

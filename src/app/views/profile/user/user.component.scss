@@ -1,0 +1,45 @@
+.profile,
+.organization {
+  padding: 115px 0;
+}
+
+.organization {
+  p {
+
+    font-size: 16px;
+  }
+}
+
+.organization-data {
+  p {
+    margin: 0;
+  }
+}
+
+.actions {
+  position: absolute;
+  display: grid;
+
+  i {
+    font-size: 20px;
+
+  }
+
+  .edit {
+    background: #3B80404A 0% 0% no-repeat padding-box;
+    border-radius: 8px;
+
+    i {
+      color: #3B8040;
+    }
+  }
+
+  .delete {
+    background: #CE393940 0% 0% no-repeat padding-box;
+    border-radius: 8px;
+
+    i {
+      color: #CE3939;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<ng-container *ngIf="upload">
+
+  <div class="uploadfilecontainer" (click)="fileInput.click()" appDragDrop (onFileDropped)="uploadFile($event)">
+    <label class="text-center cursor-pointer">
+      <img src="./../../../../assets/upload.png" alt="upload image">
+      <p class="mt-4 ">Click to select file or drag and drop</p>
+    </label>
+    <input hidden type="file" #fileInput (change)="uploadFile($event.target.files)">
+  </div>
+  <div class="files-list" *ngFor="let file of files;let i=index">
+    <p>{{ file }}</p>
+    <button class="delete-file" (click)="deleteAttachment(i)">
+      <img src="../../assets/Recycle_Bin_Full.png">
+    </button>
+  </div>
+</ng-container>
+<ng-container *ngIf="select">
+  <app-select [files]="files"></app-select>
+</ng-container>

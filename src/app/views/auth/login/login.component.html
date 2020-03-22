@@ -1,0 +1,29 @@
+ <div class="login px-3 py-4">
+   <h1 class="w-100 text-center no-before">{{'NAV.LOGIN' | translate}}</h1>
+
+   <form (submit)="onLogin(form)" #form="ngForm">
+     <div class="form-group">
+       <input class="form-control" required email name="email" #emailInput="ngModel" ngModel type="email"
+         placeholder="{{'LOGIN.EMAIL' | translate}}">
+       <span class="text-red m-0"
+         *ngIf="emailInput.touched && emailInput.invalid">{{'LOGIN.ENTER-VALID-EMAIL' | translate}}</span>
+     </div>
+     <div class="form-group mb-1">
+       <input class="form-control" type="password" required ngModel name="password" #passwordInput="ngModel"
+         placeholder="{{'LOGIN.PASSWORD' | translate}}">
+       <span class="text-red m-0"
+         *ngIf="passwordInput.touched && passwordInput.invalid">{{'LOGIN.ENTER-VALID-PASSWORD' | translate}}</span>
+     </div>
+     <p class="m-0 text-right text-capitalize ">
+       <a class="btn p-0 m-0 btn-link text-dark"
+         routerLink="auth/forgot-password">{{'LOGIN.FORGOT-PASSWORD' | translate}}</a> </p>
+     <div class="text-center mt-4">
+
+       <button class="btn btn-success" type="submit">{{'NAV.LOGIN' | translate}}</button>
+       <p class="mt-4">
+         <span>{{'LOGIN.DONT-HAVE-ACC' | translate}}</span>
+         <span><a class="btn py-0 pl-1 mb-1 btn-link text-success"
+             routerLink="auth/signup">{{'NAV.SIGNUP' | translate}}</a></span></p>
+     </div>
+   </form>
+ </div>

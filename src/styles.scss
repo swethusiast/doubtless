@@ -1,0 +1,157 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Cairo:200,300,400&display=swap');
+@import "./assets/fonts/line-awesome/css/line-awesome.min.css";
+
+body {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 2.2rem;
+  color: #121315;
+  overflow-x: hidden;
+}
+
+.form-control {
+  border-radius: 5px;
+
+}
+
+.canvasjs-chart-container {
+  text-align: unset !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+p {
+  letter-spacing: 0;
+  color: #000000;
+  font-size: 20px;
+}
+
+h1 {
+  padding: 60px 0 30px 0;
+  color: #3B8040;
+  text-shadow: 0px 3px 6px #3B804080;
+  font-size: 40px;
+  font-weight: 200;
+  position: relative;
+
+  &.no-before {
+    &::before {
+      display: none;
+    }
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    background: url('./assets/sign-left.svg') center no-repeat;
+    height: 210px;
+    width: 100%;
+    right: 67%;
+    position: absolute;
+    bottom: 10px;
+    z-index: -1;
+
+  }
+}
+
+.btn.btn-success {
+  font-weight: 200;
+  background: #3B8040 0% 0% no-repeat padding-box;
+  border-radius: 5px;
+  border: 1px #3B8040;
+}
+
+.text-success {
+  color: #3B8040;
+
+}
+
+.text-red {
+  color: rgb(128, 59, 59);
+}
+
+.form-card {
+  background-color: #fff;
+  box-shadow: 5px 5px 20px #0000000F;
+  border-radius: 10px;
+  position: relative;
+
+  h2 {
+    color: #3B8040;
+    text-shadow: 0px 3px 6px #3B804080;
+    font-weight: 200;
+  }
+
+  &.no-after {
+    margin-right: auto;
+    margin-left: unset;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    background: url('./assets/sign-right.svg') center no-repeat;
+    height: 210px;
+    width: 100%;
+    left: 67%;
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  label {
+    margin: 0;
+  }
+}
+
+ul {
+  margin: 0;
+}
+
+#faqs.faqs {
+  .card {
+    border: unset;
+
+    .card-header {
+      padding: 0;
+      margin-bottom: 0;
+      background-color: unset;
+      border-bottom: unset;
+
+      button {
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        border: 1px solid #3B8040;
+        border-radius: 5px;
+
+        &.closed {
+          border-color: #DFDFDF;
+
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .card-body {
+      margin-top: 10px;
+      border: 1px solid #3B8040;
+      border-radius: 5px;
+
+    }
+  }
+
+}
+
+.canvasjs-chart-credit {
+  display: none;
+}

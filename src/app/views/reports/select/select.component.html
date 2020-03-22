@@ -1,0 +1,27 @@
+<ng-container *ngIf="select">
+  <div class="container mt-5">
+    <form class="form-card no-after py-5 px-4" #selectForm="ngForm" (submit)="onSelect(selectForm)">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Example select</label>
+            <select required ngModel #username="ngModel" name="username" class="form-control"
+              id="exampleFormControlSelect1">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+
+            </select>
+          </div>
+        </div>
+
+      </div>
+      <div class="text-center mt-4">
+        <button class="btn btn-success" type="submit">View Sheet</button>
+      </div>
+    </form>
+  </div>
+</ng-container>
+<ng-container *ngIf="sheet">
+  <app-sheet></app-sheet>
+</ng-container>

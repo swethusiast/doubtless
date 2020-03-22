@@ -1,0 +1,76 @@
+<section class="profile pb-0">
+  <div class="container">
+    <h1>{{'USER.PROFILE' | translate}}</h1>
+    <div class="row">
+      <div class="col-md-8 m-auto">
+        <div class="form-card mt-5 no-after p-4">
+          <div class="d-flex justify-content-start">
+            <p class="pr-5"><strong>{{'USER.NAME' | translate}}: </strong> {{profile.name}} </p>
+            <p><strong>{{'USER.EMAIL' | translate}}: </strong> {{profile.email}} </p>
+          </div>
+
+          <p><strong>{{'USER.PHONE' | translate}}: </strong> {{profile.phone}} </p>
+          <div class="actions">
+            <a class="cursor-pointer text-white edit px-1" routerLink="/user/edit-profile"><i
+                class="las la-pen"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="organization">
+  <div class="container">
+    <div class="row align-items-center justify-content-between">
+      <div class="col-md-8">
+        <h1>{{'USER.ORGANIZATIONS' | translate}}</h1>
+      </div>
+      <button class="btn btn-success ml-3" routerLink="/user/add-organization"><i
+          class="la la-plus mr-2"></i>{{'USER.NEW-ORGANIZATION' | translate}}</button>
+    </div>
+    <div class="row">
+      <ng-container *ngFor="let section of profile.organizations">
+        <div class="col-md-6 m-auto">
+          <a class="  text-decoration-none" routerLink="/user/organization">
+            <div class="form-card mt-5 no-after p-4">
+              <div class="row">
+                <div class="col-md-2 p-0">
+                  <div class="d-flex justify-content-center about-section-icon">
+                    <img [src]="section.image" alt="section image">
+                  </div>
+                </div>
+                <div class="col-md-10 p-0">
+                  <div class="d-flex justify-content-around flex-wrap organization-data">
+                    <div>
+                      <p><strong>{{'USER.NAME' | translate}}: </strong> {{section.name}} </p>
+                      <p><strong>{{'USER.ADDRESS' | translate}}: </strong> {{section.address}} </p>
+                      <p><strong>{{'USER.INDUSTRY' | translate}}: </strong> {{section.industry}} </p>
+                      <p><strong>{{'USER.WEBSITE' | translate}}: </strong> {{section.websit}} </p>
+                      <p><strong>{{'USER.CURRENCY' | translate}}: </strong> {{section.currency}} </p>
+                    </div>
+
+                    <div>
+                      <p><strong>{{'USER.POBOX' | translate}}: </strong> {{section.poBox}} </p>
+                      <p><strong>{{'USER.TAX-NO' | translate}}: </strong> {{section.taxNo}} </p>
+                      <p><strong>{{'USER.COMMERCIAL-NO' | translate}}: </strong> {{section.commercialNo}} </p>
+                      <p><strong>{{'USER.VAT-NO' | translate}}: </strong> {{section.vatNumber}} </p>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+              <div class="actions">
+                <a class="cursor-pointer text-white edit px-1"
+                  [routerLink]="['/user/edit-organization/', section.id]"><i class="las la-pen"></i></a>
+                <a class="cursor-pointer text-white delete px-1 mt-2"><i class="la la-trash"></i></a>
+              </div>
+            </div>
+          </a>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>

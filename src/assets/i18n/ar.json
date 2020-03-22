@@ -1,0 +1,53 @@
+{
+  "NAV": {
+      "HOME": "الصفحة الرئيسية",
+      "SIGNUP": "مستخد جديد",
+      "LOGIN": "تسجيل دخول",
+      "HOW-IT-WORKS": "المنهجية",
+      "FAQS": "أسئلة متكررة",
+      "REPORTS": "تقارير",
+      "PROFILE": "ملف شخصي"
+  },
+  "LOGIN": {
+    "EMAIL": "البريد الالكتروني",
+    "PASSWORD": "كلمة المرور",
+    "FORGOT-PASSWORD": "نسيت كلمة المرور ؟",
+    "DONT-HAVE-ACC": "تسجيل مستخدم جديد",
+    "ENTER-VALID-EMAIL": "الرجاء ادخال ايميل جديد",
+    "ENTER-VALID-PASSWORD": "البريد الالكتروني او كلمة السر غير صحيح"
+   },
+   "SIGNUP": {
+    "NAME": "الاسم",
+    "EMAIL": "البريد الالكتروني",
+    "PASSWORD": "كلمة المرور",
+    "CONFIRM-PASSWORD": "تأكيد كلمة المرور",
+    "ACCEPT-TERMS": "الشروط والاحكام",
+    "PHONE": "الهاتف",
+    "REGISTER": "تسجيل",
+    "SAVE": "حفظ",
+    "PRICES": "الأسعار",
+    "EDIT-PROFILE": "تعديل ملف المستخدم",
+    "ENTER-VALID-PASSWORD": "الرجاء ادخال كلمة مرور صحيحة"
+   },
+   "USER": {
+    "PROFILE": "الملف الشخصي",
+    "NAME": "الاسم",
+    "EMAIL": "البريد الالكتروني",
+    "PHONE": "الهاتف",
+    "ORGANIZATIONS": "الجهات",
+    "NEW-ORGANIZATION": "جهة جديدة",
+    "ADD-ORGANIZATION": "اضافة جهة",
+    "EDIT-ORGANIZATION": "تعديل جهة",
+    "UPLOAD-LOGO": "تحميل الشعار",
+    "ADDRESS": "العنوان",
+    "INDUSTRY": "مجال العمل",
+    "WEBSITE": "الموقع الالكتروني",
+    "CURRENCY": "العملة",
+    "POBOX": "الرمز البريدي",
+    "TAX-NO": "رقم السجل الضريبي",
+    "COMMERCIAL-NO": "رقم السجل التجاري",
+    "VAT-NO": "رقم التسجيل في القيمة المضافة",
+    "EX-SUMMARY": "ملخص تنفيذي",
+    "SAVE": "حفظ"
+  }
+}
